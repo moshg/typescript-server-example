@@ -3,6 +3,8 @@ services:
     build: .
     ports:
       - 3000:3000
+    environment:
+      - PORT=3000
   database:
     image: postgres:15.3
     ports:
@@ -11,6 +13,6 @@ services:
     volumes:
       - ./db:/docker-entrypoint-initdb.d:ro
     environment:
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_USER: postgres
-      POSTGRES_DB: postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
