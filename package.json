@@ -3,7 +3,8 @@
   "scripts": {
     "dev": "tsx src/index.ts --watch",
     "build": "esbuild src/index.ts --bundle --platform=node --format=esm --target=node18 --outfile=dist/index.mjs",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "lint": "eslint src/**/*.ts"
   },
   "engines": {
     "node": "^18.16.1"
@@ -14,8 +15,15 @@
   },
   "devDependencies": {
     "@types/node": "^20.4.5",
+    "@typescript-eslint/eslint-plugin": "^6.2.0",
+    "@typescript-eslint/parser": "^6.2.0",
     "esbuild": "^0.18.17",
+    "eslint": "^8.45.0",
+    "prettier": "3.0.0",
     "tsx": "^3.12.2",
     "typescript": "^5.1.6"
+  },
+  "prettier": {
+    "singleQuote": true
   }
 }
