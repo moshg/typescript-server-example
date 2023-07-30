@@ -6,6 +6,7 @@ WORKDIR /app
 COPY --chown=node:node package.json pnpm-lock.yaml ./
 RUN pnpm install --frozen-lockfile
 COPY --chown=node:node . .
+RUN pnpm run check
 RUN pnpm run build
 
 FROM node:18.17-slim AS backend
